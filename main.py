@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from api.predict import router as predict_router
 from fastapi.middleware.cors import CORSMiddleware
 from api.resources import router as resource_router
-
+from api.analytics import router as analytics_router
 from api.barricades import router as barricade_router
 
 from api.diversion import router as diversion_router
@@ -34,6 +34,7 @@ app.include_router(diversion_router)
 app.include_router(
     predict_router
 )
+app.include_router(analytics_router)
 @app.get("/")
 def home():
 
