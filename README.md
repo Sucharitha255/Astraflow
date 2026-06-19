@@ -1,121 +1,158 @@
-#  AstraFlow Frontend
+#  AstraFlow Backend
 
-Interactive dashboard for visualizing AI-powered traffic management recommendations.
+AI-powered backend system for forecasting traffic impact caused by planned and unplanned events and generating operational recommendations.
 
 ## 📌 Overview
 
-AstraFlow Frontend provides an intuitive interface to create events, visualize predictions and monitor operational recommendations.
+AstraFlow Backend is built using FastAPI and multiple AI decision engines to help traffic authorities proactively manage congestion caused by events such as:
 
-Users can:
+* Construction activities
+* Public events
+* Vehicle breakdowns
+* Accidents
 
-* Create traffic events
-* Forecast impact
-* Analyze risk
-* View similar historical events
-* Monitor operations
-* Explore analytics dashboards
+The system predicts impact severity, estimates risk, finds similar historical events and recommends operational actions.
 
 ---
 
 ## ✨ Features
 
-### 🏠 Home
+### 🧠 AI Prediction Pipeline
 
-Project overview and navigation.
+* Impact Assessment Engine
+* Risk Assessment Engine
+* Similarity Engine
+* Resource Allocation Engine
+* Barricade Recommendation Engine
+* Diversion Recommendation Engine
 
-### 📊 Dashboard
+---
 
-* Event creation form
-* Impact prediction
-* Risk scoring
-* Resource recommendations
-* Barricade recommendations
-* Diversion strategies
-* Similar event analysis
+## 🏗 Architecture
 
-### 🚓 Operations Center
+User Event Input
 
-Displays operational deployment information.
+↓
 
-### 📈 Analytics
+Impact Engine
 
-Visualizes:
+↓
 
-* Event causes
-* Risk distribution
-* Zone-wise event analysis
+Risk Engine
+
+↓
+
+Historical Similarity Engine
+
+↓
+
+Decision Engines
+
+↓
+
+Traffic Recommendations
 
 ---
 
 ## 🛠 Tech Stack
 
-* React
-* Vite
-* Tailwind CSS
-* Axios
-* Recharts
-* React Router DOM
-* Lucide React
+* Python
+* FastAPI
+* Pandas
+* Scikit-learn
+* Joblib
+* Uvicorn
 
 ---
 
 ## 📂 Project Structure
 
-frontend/
+backend/
 
-├── src/
+├── api/
 
-│
+├── core/
 
-├── components/
+├── preprocessing/
 
-├── pages/
+├── models/
 
-├── services/
+├── config/
 
-├── App.jsx
+├── data/
 
-└── main.jsx
+├── utils/
+
+└── main.py
 
 ---
 
 ## 🚀 Setup
 
-Clone repository
+### Clone repository
 
 ```bash
 git clone <repository-url>
 ```
 
-Install dependencies
+### Create virtual environment
 
 ```bash
-npm install
+python -m venv venv
 ```
 
-Run development server
+### Activate environment
+
+Windows:
 
 ```bash
-npm run dev
+venv\Scripts\activate
 ```
 
-Application runs at:
+### Install dependencies
 
-```text
-http://localhost:5173
+```bash
+pip install -r requirements.txt
 ```
 
----
+### Run server
 
-## 🔗 Backend Requirement
+```bash
+uvicorn main:app --reload
+```
 
-Make sure AstraFlow Backend is running.
-
-Backend URL:
+Server runs at:
 
 ```text
 http://127.0.0.1:8000
 ```
 
+Swagger documentation:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
 ---
+
+## 🔌 Available APIs
+
+| Endpoint            | Description                 |
+| ------------------- | --------------------------- |
+| /predict            | Complete AstraFlow pipeline |
+| /api/resources      | Resource recommendations    |
+| /api/barricades     | Barricade recommendations   |
+| /api/diversion      | Diversion recommendations   |
+| /api/similar-events | Historical similar events   |
+
+---
+
+
+
+
+
+
+
+
+
 
